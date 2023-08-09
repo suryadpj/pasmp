@@ -113,7 +113,7 @@
                         <li class="splide__slide">
                             <div class="card bg-secondary">
                                 <a href="{{ $nomorplat }}/corollaaltis">
-                                    <img src="../../assets/img/corollaaltis.jpeg" class="card-img-top" alt="image">
+                                    <img src="../../assets/img/corollaaltis-.jpeg" class="card-img-top" alt="image">
                                     <div class="card-body">
                                         <h5 class="card-title">Corolla Altis</h5>
                                     </div>

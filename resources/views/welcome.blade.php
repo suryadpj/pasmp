@@ -42,7 +42,7 @@
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide p-2">
-                        <img src="assets/img/isometric5.jpg" alt="alt" class="imaged w-100 square mb-4">
+                        <img src="assets/img/vector_service.png" alt="alt" class="imaged w-100 square mb-4">
                         <h2>Personal Assistant Apps</h2>
                         <p>Tools untuk anda memberikan perawatan terbaik untuk kendaraa anda</p>
                     </li>

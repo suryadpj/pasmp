@@ -16,6 +16,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../../../../../assets/img/logo_tunas.png">
     <link rel="stylesheet" href="../../../../../../assets/css/style2.css">
     <link rel="manifest" href="__manifest.json">
+    <style>
+        @media print {
+            body {
+                visibility: hidden;
+            }
+            #section-to-print {
+                visibility: visible;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-white">
@@ -41,12 +54,16 @@
     <div id="appCapsule">
 
 
-        <div class="section mt-2">
+        <div class="section mt-2" id="section-to-print">
             <div class="section-title">Rekap Pemesanan</div>
             <div class="card">
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
+                            <tr>
+                                <th scope="row">Tanggal</th>
+                                <td>{{ date('d F Y H:i:s') }}</td>
+                            </tr>
                             <tr>
                                 <th scope="row">Nama</th>
                                 <td>{{ $nama }}</td>
@@ -187,6 +204,7 @@
         }
         $('#datachecksheet').html(isilampiran)
         $(document).on('click', '.reservasi', function(){
+                window.print();
                 notification('notification-6', 3000)
                 // window.location.href = "reservasi/{{ $nama }}/{{ $nomorplat }}/{{ $kendaraan }}/{{ $kilometer }}/{{ $transmisi }}/" + paket;
         });
