@@ -113,6 +113,13 @@
                 window.location.href = "{{ $nama }}/" + x;
             }
         });
+        var xx = document.getElementById('smscode');
+        xx.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("submit").click();
+        }
+        });
     </script>
 
 

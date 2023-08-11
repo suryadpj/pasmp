@@ -82,7 +82,10 @@
                             </tr>
                             <tr>
                                 <th scope="row">Total Reservasi</th>
-                                <td id="totalall">0</td>
+                                <td><span id="totalall">0</span><br><code>*hitungan estimasi</code></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
                             </tr>
                         </tbody>
                     </table>

@@ -43,23 +43,20 @@
             <h4>Masukan Nama Anda</h4>
         </div>
         <div class="section mb-5 p-2">
-            <form role="form" id="formdt" method='post' enctype="multipart/form-data">
-            {{ csrf_field() }}
-                <div class="form-group basic">
-                    <input type="text" class="form-control verification-input" id="smscode" placeholder=".....">
-                </div>
-                <img src="assets/img/register2.jpg" alt="alt" class="imaged w-100 square mb-4">
-                <div class="carousel-button-footer">
-                    <div class="row">
-                        <div class="col-6">
-                            <a href="homepage" class="btn btn-secondary btn-outline-secondary btn-lg btn-block">Kembali</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="#" class="reservasi btn btn-success btn-lg btn-block" id="submit">Next</a>
-                        </div>
+            <div class="form-group basic">
+                <input type="text" class="form-control verification-input" id="smscode" placeholder=".....">
+            </div>
+            <img src="assets/img/register2.jpg" alt="alt" class="imaged w-100 square mb-4">
+            <div class="carousel-button-footer">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="homepage" class="btn btn-secondary btn-outline-secondary btn-lg btn-block">Kembali</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="reservasi btn btn-success btn-lg btn-block" id="submit">Next</a>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
 
     </div>
@@ -102,7 +99,7 @@
     <script src="assets/js/base.js"></script>
     <script>
         $(document).on('click', '.reservasi', function(){
-            var x = document.getElementById('smscode').value;
+        var x = document.getElementById('smscode').value;
             if(x == "")
             {
                 notification('notification-6', 3000)
@@ -111,6 +108,13 @@
             {
                 window.location.href = "reservasi/" + x;
             }
+        });
+        var xx = document.getElementById('smscode');
+        xx.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("submit").click();
+        }
         });
     </script>
 
