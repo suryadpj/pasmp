@@ -179,9 +179,9 @@
                         $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged img-fluid">');
                     }
                     $('#penjelasan').html(html.penjelasan);
+                    $('#ModalBasic').modal('show');
                 }
             })
-            $('#ModalBasic').modal('show');
         });
     </script>
 
