@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -27,8 +28,8 @@ Route::get('/catalog', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/catalog', [App\Http\Controllers\HomeController::class, 'catalog'])->name('catalog');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/catalog', [HomeController::class, 'catalog'])->name('catalog');
 // Route::resource('reservasi', ReservasiController::class);
 Route::get('/reservasi', [ReservasiController::class, 'reservasi1'])->name('reservasi1');
 Route::get('/reservasi/{nama}', [ReservasiController::class, 'reservasi2'])->name('reservasi2');
@@ -42,3 +43,4 @@ Route::get('/showmaterial/{kendaraan}/{paket}', [ReservasiController::class, 'sh
 Route::get('/summaterial/{kendaraan}/{paket}', [ReservasiController::class, 'summaterial'])->name('summaterial');
 Route::get('/showpart/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'showpart'])->name('showpart');
 Route::get('/sumpart/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'sumpart'])->name('sumpart');
+Route::get('/showcatalog/{segmen}/{iddata}', [HomeController::class, 'showcatalog'])->name('showcatalog');

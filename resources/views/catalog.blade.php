@@ -36,7 +36,7 @@
             Katalog
         </div>
         <div class="right">
-            <a href="#" class="headerButton">
+            <a href="reservasi" class="headerButton">
                 <ion-icon name="bag-outline"></ion-icon>
             </a>
         </div>
@@ -49,41 +49,21 @@
 
         <!-- Transactions -->
         <div class="section mt-2">
-            <div class="section-title">Cross Selling</div>
+            <div class="section-title">Our Product</div>
             <div class="transactions">
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <img src="assets/img/gambar1.png" alt="img" class="image-block imaged w48">
-                        <div>
-                            <strong>Injection Cleaner</strong>
-                            <p>Untuk penggunaan di atas 30.000 km</p>
+                @foreach ($ourproduct as $a)
+                    <!-- item -->
+                    <a href="#" class="show item" id="1_{{ $a->id }}">
+                        <div class="detail">
+                            <img src="{{ $a->source }}" alt="img" class="image-block imaged w48">
+                            <div>
+                                <strong>{{ $a->judul }}</strong>
+                                <p>{{ $a->ringkasan }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <!-- * item -->
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <img src="assets/img/gambar2.png" alt="img" class="image-block imaged w48">
-                        <div>
-                            <strong>Ban</strong>
-                            <p>Untuk penggunaan di atas 50.000 km</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- * item -->
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <img src="assets/img/gambar3.png" alt="img" class="image-block imaged w48">
-                        <div>
-                            <strong>Aki Toyota Maintenance Free</strong>
-                            <p>Untuk penggunaan di atas 50.000 km</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- * item -->
+                    </a>
+                    <!-- * item -->
+                @endforeach
             </div>
         </div>
         <!-- * Transactions -->
@@ -92,97 +72,43 @@
         <div class="section mt-2">
             <div class="section-title">Service Berkala</div>
             <div class="transactions">
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <img src="assets/img/gambar4.png" alt="img" class="image-block imaged w48">
-                        <div>
-                            <strong>Service berkala ke-1</strong>
-                            <p>Wiper Fluid</p>
+                @foreach ($serviceberkala as $b)
+                    <!-- item -->
+                    <a href="#" class="show item" id="2_{{ $b->id }}">
+                        <div class="detail">
+                            <img src="{{ $b->source }}" alt="img" class="image-block imaged w48">
+                            <div>
+                                <strong>{{ $b->judul }}</strong>
+                                <p>{{ $b->ringkasan }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <!-- * item -->
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <img src="assets/img/gambar5.png" alt="img" class="image-block imaged w48">
-                        <div>
-                            <strong>Service berkala ke-2</strong>
-                            <p>Upgrade Engine oil anda ke TMO 5W-30SN GF 5 new formula & brake cleaner</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- * item -->
-                <!-- item -->
-                <a href="app-transaction-detail.html" class="item">
-                    <div class="detail">
-                        <img src="assets/img/gambar6.png" alt="img" class="image-block imaged w48">
-                        <div>
-                            <strong>Service berkala ke-3</strong>
-                            <p>Upgrade Engine oil anda ke TMO 5W-30 and engine cleaning</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- * item -->
+                    </a>
+                    <!-- * item -->
+                @endforeach
             </div>
         </div>
         <!-- News -->
         <div class="section full mt-4 mb-3">
             <div class="section-heading padding">
                 <h2 class="title">Pekerjaan lain</h2>
-                <a href="app-blog.html" class="link">View All</a>
             </div>
 
             <!-- carousel multiple -->
             <div class="carousel-multiple splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-
+                        @foreach ($pekerjaanlain as $c)
                         <li class="splide__slide">
-                            <a href="app-blog-post.html">
+                            <a href="#" class="show" id="3_{{ $c->id }}">
                                 <div class="blog-card">
-                                    <img src="assets/img/gambar7.png" alt="image" class="imaged w-100">
+                                    <img src="{{ $c->source }}" alt="image" class="imaged w-100">
                                     <div class="text">
-                                        <h4 class="title">Spooring</h4>
+                                        <h4 class="title">{{ $c->judul }}</h4>
                                     </div>
                                 </div>
                             </a>
                         </li>
-
-                        <li class="splide__slide">
-                            <a href="app-blog-post.html">
-                                <div class="blog-card">
-                                    <img src="assets/img/gambar8.png" alt="image" class="imaged w-100">
-                                    <div class="text">
-                                        <h4 class="title">Remaching</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="splide__slide">
-                            <a href="app-blog-post.html">
-                                <div class="blog-card">
-                                    <img src="assets/img/gambar9.png" alt="image" class="imaged w-100">
-                                    <div class="text">
-                                        <h4 class="title">Winshield Care</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="splide__slide">
-                            <a href="app-blog-post.html">
-                                <div class="blog-card">
-                                    <img src="assets/img/gambar10.png" alt="image" class="imaged w-100">
-                                    <div class="text">
-                                        <h4 class="title">Nano Glass Care</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -196,6 +122,22 @@
         <div class="section mt-2 mb-2">
             <a href="reservasi" class="btn btn-primary btn-block btn-lg">Reservasi</a>
         </div>
+        <!-- Modal Basic -->
+        <div class="modal fade modalbox" id="ModalBasic" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="judul">Modal title</h5>
+                        <a href="#" data-bs-dismiss="modal">Close</a>
+                    </div>
+                    <div class="modal-body">
+                        <p id="gambar"></p>
+                        <p id="penjelasan"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Modal Basic -->
 
 
 
@@ -208,12 +150,40 @@
     <!-- ========= JS Files =========  -->
     <!-- Bootstrap -->
     <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- Splide -->
     <script src="assets/js/plugins/splide/splide.min.js"></script>
     <!-- Base Js File -->
     <script src="assets/js/base.js"></script>
+    <script>
+        $(document).on('click', '.show', function(){
+            var id = $(this).attr('id');
+            console.log(id)
+            const [segmen, iddata] = id.split('_');
+            $.ajax({
+                url:"showcatalog/"+segmen+"/"+iddata,
+                dataType:"json",
+                success:function(html)
+                {
+                    $('#judul').html(html.judul);
+                    if(html.segmen == 1)
+                    {
+                        $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged w36">');
+                    }else if(html.segmen == 2)
+                    {
+                        $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged w36">');
+                    }else if(html.segmen == 3)
+                    {
+                        $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged img-fluid">');
+                    }
+                    $('#penjelasan').html(html.penjelasan);
+                }
+            })
+            $('#ModalBasic').modal('show');
+        });
+    </script>
 
 
 </body>
