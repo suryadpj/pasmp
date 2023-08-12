@@ -49,109 +49,18 @@
             <div class="carousel-single splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/agya">
-                                    <img src="../../assets/img/agya.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Agya</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/allnewavanza">
-                                    <img src="../../assets/img/avanza.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">All New Avanza</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/allnewveloz">
-                                    <img src="../../assets/img/veloz.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">All New Veloz</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/grandnewavanza">
-                                    <img src="../../assets/img/grandnewavanza.jpeg" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Grand New Avanza</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/calya">
-                                    <img src="../../assets/img/calya.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Calya</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/camry">
-                                    <img src="../../assets/img/camry.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Camry</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/corollaaltis">
-                                    <img src="../../assets/img/corollaaltis-.jpeg" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Corolla Altis</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/corollacross">
-                                    <img src="../../assets/img/corollacross.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Corolla Cross</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/innovabensin">
-                                    <img src="../../assets/img/innovazenyx.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Innova Bensin</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="splide__slide">
-                            <div class="card bg-secondary">
-                                <a href="{{ $nomorplat }}/innovadiesel">
-                                    <img src="../../assets/img/innovadiesel.png" class="card-img-top" alt="image">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><br>Innova Diesel</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-
+                        @foreach ($kendaraan as $a)
+                            <li class="splide__slide">
+                                <div class="card">
+                                    <a href="{{ $nomorplat }}/{{ $a->nama }}">
+                                        <img src="{{ $a->source }}" class="card-img-top" alt="image">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $a->namashow }}</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

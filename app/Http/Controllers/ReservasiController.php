@@ -26,7 +26,8 @@ class ReservasiController extends Controller
     }
     public function reservasi3($nama, $nomorplat)
     {
-        return view('reservasi3',['nama' => $nama, 'nomorplat' => $nomorplat]);
+        $kendaraan = DB::table('kendaraan')->where('deleted',0)->where('show',1)->orderby('nama','asc')->get();
+        return view('reservasi3',['nama' => $nama, 'nomorplat' => $nomorplat,'kendaraan' => $kendaraan]);
     }
     public function reservasi4($nama, $nomorplat, $kendaraan)
     {
