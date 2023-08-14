@@ -12,9 +12,9 @@
     <title>Personal Asisstant Apps</title>
     <meta name="description" content="Finapp HTML Mobile Template">
     <meta name="keywords" content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
-    <link rel="icon" type="image/png" href="../../assets/img/logo_tunas.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/logo_tunas.png">
-    <link rel="stylesheet" href="../../assets/css/style2.css">
+    <link rel="icon" type="image/png" href="../../../assets/img/logo_tunas.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/logo_tunas.png">
+    <link rel="stylesheet" href="../../../assets/css/style2.css">
     <link rel="manifest" href="__manifest.json">
 </head>
 
@@ -22,7 +22,7 @@
 
     <!-- loader -->
     <div id="loader">
-        <img src="../../assets/img/logo_tunas.png" alt="icon" class="loading-icon">
+        <img src="../../../assets/img/logo_tunas.png" alt="icon" class="loading-icon">
     </div>
     <!-- * loader -->
 
@@ -41,7 +41,8 @@
             <h2>Haloo, {{ $nama }}</h2>
             <br>
             <h4>Pilih jenis kendaraan anda</h4>
-            <input type="text" class="form-control" id="search" placeholder="cari kendaraan">
+            <input type="text" class="form-control" id="search" placeholder="cari kendaraan" value="{{ $kendaraancari }}">
+            <hr>
         </div>
         <div class="section mb-5 p-2">
             <form role="form" id="formdt" method='post' enctype="multipart/form-data">
@@ -53,8 +54,8 @@
                             @foreach ($kendaraan as $a)
                                 <li class="splide__slide">
                                     <div class="card">
-                                        <a href="{{ $nomorplat }}/{{ $a->nama }}">
-                                            <img src="{{ $a->source }}" class="card-img-top" alt="image">
+                                        <a href="../../../reservasi/{{ $nama }}/{{ $nomorplat }}/{{ $a->nama }}">
+                                            <img src="../{{ $a->source }}" class="card-img-top" alt="image">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $a->namashow }}</h5>
                                             </div>
@@ -67,7 +68,7 @@
                 </div>
                     <!-- * carousel single -->
                 <div class="section mt-2 mb-2">
-                    <a href="./" class="btn btn-primary btn-block btn-lg">Kembali</a>
+                    <a href="../../../reservasi/{{ $nama }}/{{ $nomorplat }}" class="btn btn-primary btn-block btn-lg">Kembali</a>
                 </div>
             </form>
         </div>
@@ -79,7 +80,7 @@
         <div class="notification-dialog android-style bg-secondary">
             <div class="notification-header">
                 <div class="in">
-                    <img src="../../assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
+                    <img src="../../../assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
                     <strong>Pemberitahuan</strong>
                     <span>now</span>
                 </div>
@@ -102,14 +103,14 @@
 
     <!-- ========= JS Files =========  -->
     <!-- Bootstrap -->
-    <script src="../../assets/js/lib/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../../assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/jquery.min.js"></script>
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- Splide -->
-    <script src="../../assets/js/plugins/splide/splide.min.js"></script>
+    <script src="../../../assets/js/plugins/splide/splide.min.js"></script>
     <!-- Base Js File -->
-    <script src="../../assets/js/base.js"></script>
+    <script src="../../../assets/js/base.js"></script>
     <script>
         $(document).on('click', '.reservasi', function(){
             var x = document.getElementById('smscode').value;
@@ -141,7 +142,14 @@
         //user is "finished typing," do something
         function doneTyping () {
             var x = document.getElementById('search').value;
-            window.location = "../../reservasifindcar/{{ $nama }}/{{ $nomorplat }}/"+x;
+            if(x == "")
+            {
+                window.location = "../../../reservasi/{{ $nama }}/{{ $nomorplat }}/"+x;
+            }
+            else
+            {
+                window.location = "../../../reservasifindcar/{{ $nama }}/{{ $nomorplat }}/"+x;
+            }
         }
     </script>
 

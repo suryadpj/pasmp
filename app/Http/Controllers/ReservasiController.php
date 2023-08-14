@@ -29,6 +29,11 @@ class ReservasiController extends Controller
         $kendaraan = DB::table('kendaraan')->where('deleted',0)->where('show',1)->orderby('nama','asc')->get();
         return view('reservasi3',['nama' => $nama, 'nomorplat' => $nomorplat,'kendaraan' => $kendaraan]);
     }
+    public function reservasi3ext($nama, $nomorplat, $kendaraancari)
+    {
+        $kendaraan = DB::table('kendaraan')->where('deleted',0)->where('namashow','LIKE','%'.$kendaraancari.'%')->where('show',1)->orderby('nama','asc')->get();
+        return view('reservasi3ext',['nama' => $nama, 'nomorplat' => $nomorplat,'kendaraan' => $kendaraan,'kendaraancari' => $kendaraancari]);
+    }
     public function reservasi4($nama, $nomorplat, $kendaraan)
     {
         return view('reservasi4',['nama' => $nama, 'nomorplat' => $nomorplat, 'kendaraan' => $kendaraan]);
@@ -78,6 +83,11 @@ class ReservasiController extends Controller
     public function showkendaraan()
     {
         $kendaraan = DB::table('kendaraan')->where('deleted',0)->get();
+        return response()->json($kendaraan);
+    }
+    public function showkendaraanfilter($ketik)
+    {
+        $kendaraan = DB::table('kendaraan')->where('namashow','LIKE','%'.$ketik.'%')->where('deleted',0)->get();
         return response()->json($kendaraan);
     }
     public function index()
