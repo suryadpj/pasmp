@@ -40,11 +40,12 @@ Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}', [ReservasiController::cl
 Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}', [ReservasiController::class, 'reservasi5'])->name('reservasi5');
 Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}/{paket}', [ReservasiController::class, 'reservasi6'])->name('reservasi6');
 Route::get('/showpaket/{kendaraan}/{paket}', [ReservasiController::class, 'showpaket'])->name('showpaket');
-Route::get('/sumpaket/{kendaraan}/{paket}', [ReservasiController::class, 'sumpaket'])->name('sumpaket');
+Route::get('/sumpaket/{kendaraan}/{paket}/{jasa}', [ReservasiController::class, 'sumpaket'])->name('sumpaket');
 Route::get('/showmaterial/{kendaraan}/{paket}', [ReservasiController::class, 'showmaterial'])->name('showmaterial');
 Route::get('/summaterial/{kendaraan}/{paket}', [ReservasiController::class, 'summaterial'])->name('summaterial');
 Route::get('/showpart/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'showpart'])->name('showpart');
 Route::get('/sumpart/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'sumpart'])->name('sumpart');
+Route::get('/sumparmat/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'sumparmat'])->name('sumparmat');
 Route::get('/showcatalog/{segmen}/{iddata}', [HomeController::class, 'showcatalog'])->name('showcatalog');
 Route::get('/showkendaraan', [ReservasiController::class, 'showkendaraan'])->name('showkendaraan');
 Route::get('/showkendaraan/{ketik}', [ReservasiController::class, 'showkendaraanfilter'])->name('showkendaraanfilter');

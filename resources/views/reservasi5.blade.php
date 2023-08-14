@@ -211,14 +211,13 @@
                     }
                 });
                 $.ajax({
-                    url:"../../../../../sumpaket/"+kendaraan+"/"+paket,
+                    url:"../../../../../sumpaket/"+kendaraan+"/"+paket+"/"+{{ $jasa->jasa }},
                     dataType:"json",
                     async: false,
                     success:function(html)
                     {
-                        // alert(html.hargasum+{{ $jasa->jasa }})
-                        totaljasa = html.hargasum+{{ $jasa->jasa }};
-                        $('#totaljasa').html(totaljasa.toLocaleString());
+                        totaljasa = html.hargasum;
+                        $('#totaljasa').html(html.hargaformat);
                     }
                 });
 
@@ -231,16 +230,6 @@
                         $('#datachecksheet2').html(isilampiran2);
                     }
                 });
-                $.ajax({
-                    url:"../../../../../summaterial/"+kendaraan+"/"+paket,
-                    async: false,
-                    dataType:"json",
-                    success:function(html)
-                    {
-                        totalmaterial = html.hargasum;
-                    }
-                });
-
 
                 $.ajax({
                     url:"../../../../../showpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
@@ -253,17 +242,18 @@
                 });
 
                 $.ajax({
-                    url:"../../../../../sumpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
+                    url:"../../../../../sumparmat/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                     async: false,
                     dataType:"json",
                     success:function(html)
                     {
-                        totalpart = totalmaterial + html.hargasum;
+                        totalmaterial = html.hargasum;
+                        $('#totalpartm').html(html.hargaformat);
                     }
                 });
 
-                totalmatpart = totaljasa+totalpart;
-                $('#totalpartm').html(totalpart.toLocaleString());
+
+                totalmatpart = totaljasa+totalmaterial;
                 $('#totalall').html(totalmatpart.toLocaleString());
 
             }

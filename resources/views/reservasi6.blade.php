@@ -154,18 +154,18 @@
         if(km > 5000 )
         {
             $.ajax({
-                url:"../../../../../../sumpaket/"+kendaraan+"/"+paket,
+                url:"../../../../../../sumpaket/"+kendaraan+"/"+paket+"/"+{{ $jasa->jasa }},
                 dataType:"json",
                 async: false,
                 success:function(html)
                 {
                     // alert(html.hargasum+{{ $jasa->jasa }})
-                    totaljasa = html.hargasum+{{ $jasa->jasa }};
+                    totaljasa = html.hargasum;
                 }
             });
 
             $.ajax({
-                url:"../../../../../../summaterial/"+kendaraan+"/"+paket,
+                url:"../../../../../sumparmat/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                 async: false,
                 dataType:"json",
                 success:function(html)
@@ -174,17 +174,7 @@
                 }
             });
 
-            $.ajax({
-                url:"../../../../../../sumpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
-                async: false,
-                dataType:"json",
-                success:function(html)
-                {
-                    totalpart = totalmaterial + html.hargasum;
-                }
-            });
-
-            totalmatpart = totaljasa+totalpart;
+            totalmatpart = totaljasa+totalmaterial;
             $('#totalall').html(totalmatpart.toLocaleString());
 
         }

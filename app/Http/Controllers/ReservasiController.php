@@ -55,9 +55,9 @@ class ReservasiController extends Controller
         $opl = DB::table('opl')->leftjoin('kendaraan','kendaraan.id','opl.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->select('*',DB::raw('FORMAT(opl.harga,0) as hargaformat'))->get();
         return response()->json($opl);
     }
-    public function sumpaket($kendaraan,$paket)
+    public function sumpaket($kendaraan,$paket, $jasa)
     {
-        $opl = DB::table('opl')->leftjoin('kendaraan','kendaraan.id','opl.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->select(DB::raw('FORMAT(SUM(opl.harga),0) as hargaformat'),DB::raw('SUM(opl.harga) as hargasum'))->first();
+        $opl = DB::table('opl')->leftjoin('kendaraan','kendaraan.id','opl.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->select(DB::raw('FORMAT(SUM(opl.harga)+'.$jasa.',0) as hargaformat'),DB::raw('SUM(opl.harga)+'.$jasa.' as hargasum'))->first();
         return response()->json($opl);
     }
     public function showmaterial($kendaraan,$paket)
@@ -79,6 +79,14 @@ class ReservasiController extends Controller
     {
         $part = DB::table('part')->leftjoin('kendaraan','kendaraan.id','part.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->where('km',$km)->where('transmisi',$transmisi)->select(DB::raw('FORMAT(SUM(part.harga),0) as hargaformat'),DB::raw('SUM(part.harga) as hargasum'))->first();
         return response()->json($part);
+    }
+    public function sumparmat($kendaraan,$paket,$km,$transmisi)
+    {
+        $part = DB::table('part')->leftjoin('kendaraan','kendaraan.id','part.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->where('km',$km)->where('transmisi',$transmisi)->select(DB::raw('FORMAT(SUM(part.harga),0) as hargaformat'),DB::raw('SUM(part.harga) as hargasum'))->first();
+        $material2 = DB::table('material')->leftjoin('kendaraan','kendaraan.id','material.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->select(DB::raw('FORMAT(SUM(material.harga),0) as hargaformat'),DB::raw('SUM(material.harga) as hargasum'))->first();
+        $total = $part->hargasum + $material2->hargasum;
+        $totalformat = number_format($part->hargasum + $material2->hargasum,0);
+        return response()->json(['hargasum' => $total, 'hargaformat' => $totalformat]);
     }
     public function showkendaraan()
     {
