@@ -44,3 +44,4 @@ Route::get('/summaterial/{kendaraan}/{paket}', [ReservasiController::class, 'sum
 Route::get('/showpart/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'showpart'])->name('showpart');
 Route::get('/sumpart/{kendaraan}/{paket}/{km}/{transmisi}', [ReservasiController::class, 'sumpart'])->name('sumpart');
 Route::get('/showcatalog/{segmen}/{iddata}', [HomeController::class, 'showcatalog'])->name('showcatalog');
+Route::get('/showkendaraan', [ReservasiController::class, 'showkendaraan'])->name('showkendaraan');

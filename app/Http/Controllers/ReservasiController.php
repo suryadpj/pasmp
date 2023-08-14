@@ -75,6 +75,11 @@ class ReservasiController extends Controller
         $part = DB::table('part')->leftjoin('kendaraan','kendaraan.id','part.IDKendaraan')->where('nama',$kendaraan)->where('paket',$paket)->where('km',$km)->where('transmisi',$transmisi)->select(DB::raw('FORMAT(SUM(part.harga),0) as hargaformat'),DB::raw('SUM(part.harga) as hargasum'))->first();
         return response()->json($part);
     }
+    public function showkendaraan()
+    {
+        $kendaraan = DB::table('kendaraan')->where('deleted',0)->get();
+        return response()->json($kendaraan);
+    }
     public function index()
     {
         //

@@ -44,31 +44,18 @@
         </div>
         <div class="section mb-5 p-2">
             <form role="form" id="formdt" method='post' enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <!-- carousel single -->
-            <div class="carousel-single splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @foreach ($kendaraan as $a)
-                            <li class="splide__slide">
-                                <div class="card">
-                                    <a href="{{ $nomorplat }}/{{ $a->nama }}">
-                                        <img src="{{ $a->source }}" class="card-img-top" alt="image">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ $a->namashow }}</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+                {{ csrf_field() }}
+                <!-- carousel single -->
+                <div class="carousel-single splide">
+                    <div class="splide__track">
+                        <ul class="splide__list" id="datakendaraan">
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- * carousel single -->
-        <div class="section mt-2 mb-2">
-            <a href="./" class="btn btn-primary btn-block btn-lg">Kembali</a>
-        </div>
-
+                    <!-- * carousel single -->
+                <div class="section mt-2 mb-2">
+                    <a href="./" class="btn btn-primary btn-block btn-lg">Kembali</a>
+                </div>
             </form>
         </div>
 
@@ -111,16 +98,28 @@
     <!-- Base Js File -->
     <script src="../../assets/js/base.js"></script>
     <script>
-        $(document).on('click', '.reservasi', function(){
-            var x = document.getElementById('smscode').value;
-            if(x == "")
-            {
-                notification('notification-6', 3000)
-            }
-            else
-            {
-                window.location.href = "reservasi/{{ $nama }}/" + x;
-            }
+        $(document).ready(function(){
+            const isilampiran = [];
+            $.ajax({
+                url:"../../showkendaraan/",
+                dataType:"json",
+                success:function(html)
+                {
+                    html.forEach( x => isilampiran.push('<li class="splide__slide"><div class="card"><a href="{{ $nomorplat }}/'+x.nama+'"><img src="'+x.source+'" class="card-img-top" alt="image"><div class="card-body"><h5 class="card-title">'+x.namashow+'</h5></div></a></div></li>'))
+                    $('#datakendaraan').html(isilampiran);
+                }
+            });
+            $(document).on('click', '.reservasi', function(){
+                var x = document.getElementById('smscode').value;
+                if(x == "")
+                {
+                    notification('notification-6', 3000)
+                }
+                else
+                {
+                    window.location.href = "reservasi/{{ $nama }}/" + x;
+                }
+            });
         });
     </script>
 
