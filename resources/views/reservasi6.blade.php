@@ -174,8 +174,8 @@
                 }
             });
 
-            totalmatpart = totaljasa+totalmaterial;
-            $('#totalall').html(totalmatpart.toLocaleString());
+            var sum = parseInt(totaljasa) + parseInt(totalmaterial);
+            $('#totalall').html(parseInt(sum).toLocaleString('en'));
 
         }
         if(km == 5000)
@@ -192,8 +192,8 @@
                         totalpart = html.hargasum;
                     }
                 });
-                totalmatpart = totaljasa+totalpart;
-                $('#totalall').html(totalmatpart.toLocaleString());
+                var sum = parseInt(totaljasa) + parseInt(totalpart);
+                $('#totalall').html(parseInt(sum).toLocaleString('en'));
         }
         $('#datachecksheet').html(isilampiran)
         $(document).on('click', '.reservasi', function(){

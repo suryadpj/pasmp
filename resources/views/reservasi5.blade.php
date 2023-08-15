@@ -277,7 +277,7 @@
                             totalpart = totalmaterial + html.hargasum;
                         }
                     });
-                    totalmatpart = totaljasa+totalpart;
+                    var totalmatpart = parseInt(totaljasa) + parseInt(totalpart);
                     $('#totalpartm').html(totalpart.toLocaleString());
                     $('#totalall').html(totalmatpart.toLocaleString());
             }
