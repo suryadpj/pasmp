@@ -254,7 +254,7 @@
 
 
                 totalmatpart = totaljasa+totalmaterial;
-                $('#totalall').html(totalmatpart.toLocaleString('en'));
+                $('#totalall').html(parseInt(totalmatpart).toLocaleString('en'));
 
             }
             if(km == 5000)
