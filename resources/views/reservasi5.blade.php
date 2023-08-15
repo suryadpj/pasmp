@@ -249,8 +249,8 @@
                 });
 
 
-                totalmatpart = totaljasa+totalmaterial;
-                $('#totalall').html(parseInt(totalmatpart).toLocaleString('en'));
+                var sum = parseInt(totaljasa) + parseInt(totalmaterial);
+                $('#totalall').html(parseInt(sum).toLocaleString('en'));
 
             }
             if(km == 5000)
