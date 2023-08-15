@@ -197,7 +197,6 @@
             var totaljasa = 0;
             var totalmaterial = 0;
             var totalpart = 0;
-            var totalmatpart = 0;
             if(km > 5000 )
             {
                 $.ajax({
@@ -253,7 +252,7 @@
                 });
 
 
-                totalmatpart = totaljasa+totalmaterial;
+                var totalmatpart = totaljasa+totalmaterial;
                 $('#totalall').html(parseInt(totalmatpart).toLocaleString('en'));
 
             }
