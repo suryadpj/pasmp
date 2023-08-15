@@ -194,9 +194,6 @@
             const isilampiran = [];
             const isilampiran2 = [];
             const isilampiran3 = [];
-            var totaljasa = 0;
-            var totalmaterial = 0;
-            var totalpart = 0;
             if(km > 5000 )
             {
                 $.ajax({
@@ -252,7 +249,7 @@
                 });
 
 
-                var totalmatpart = totaljasa+totalmaterial;
+                totalmatpart = totaljasa+totalmaterial;
                 $('#totalall').html(parseInt(totalmatpart).toLocaleString('en'));
 
             }
