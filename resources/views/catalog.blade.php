@@ -15,6 +15,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo_tunas.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="__manifest.json">
+    <style>
+            video {
+    width: 100%;
+    height: auto;
+    }
+    </style>
 </head>
 
 <body>
@@ -55,7 +61,7 @@
                     <!-- item -->
                     <a href="#" class="show item" id="1_{{ $a->id }}">
                         <div class="detail">
-                            <img src="{{ $a->source }}" alt="img" class="image-block imaged w48">
+                            <img src="{{ $a->gambardepan }}" alt="img" class="image-block imaged w48">
                             <div>
                                 <strong>{{ $a->judul }}</strong>
                                 <p>{{ $a->ringkasan }}</p>
@@ -76,7 +82,7 @@
                     <!-- item -->
                     <a href="#" class="show item" id="2_{{ $b->id }}">
                         <div class="detail">
-                            <img src="{{ $b->source }}" alt="img" class="image-block imaged w48">
+                            <img src="{{ $b->gambardepan }}" alt="img" class="image-block imaged w48">
                             <div>
                                 <strong>{{ $b->judul }}</strong>
                                 <p>{{ $b->ringkasan }}</p>
@@ -101,7 +107,7 @@
                         <li class="splide__slide">
                             <a href="#" class="show" id="3_{{ $c->id }}">
                                 <div class="blog-card">
-                                    <img src="{{ $c->source }}" alt="image" class="imaged w-100">
+                                    <img src="{{ $c->gambardepan }}" alt="image" class="imaged w-100">
                                     <div class="text">
                                         <h4 class="title">{{ $c->judul }}</h4>
                                     </div>
@@ -131,7 +137,9 @@
                         <a href="#" data-bs-dismiss="modal">Close</a>
                     </div>
                     <div class="modal-body">
-                        <p id="gambar"></p>
+                        <p id="gambar1" class="gambar"></p>
+                        <p id="gambar2" class="gambar"></p>
+                        <p id="gambar3" class="gambar"></p>
                         <p id="penjelasan"></p>
                     </div>
                 </div>
@@ -168,15 +176,84 @@
                 success:function(html)
                 {
                     $('#judul').html(html.judul);
-                    if(html.segmen == 1)
+                    $('.gambar').html('');
+                    if(html.segmen == 1 || 3)
                     {
-                        $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged w36">');
+                        if(html.source)
+                        {
+                            const [kategori, src] = html.source.split('_');
+                            console.log(kategori)
+                            if(kategori == 1)
+                            {
+                                $('#gambar1').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged img-fluid"></a>');
+                            }
+                            else if(kategori == 2)
+                            {
+                                $('#gambar1').html('<video controls autoplay><source src="'+src+'"></video>');
+                            }
+                        }
+                        if(html.source2)
+                        {
+                            const [kategori, src] = html.source2.split('_');
+                            if(kategori == 1)
+                            {
+                                $('#gambar2').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged img-fluid"></a>');
+                            }
+                            else if(kategori == 2)
+                            {
+                                $('#gambar2').html('<video controls autoplay><source src="'+src+'"></video>');
+                            }
+                        }
+                        if(html.source3)
+                        {
+                            const [kategori, src] = html.source3.split('_');
+                            if(kategori == 1)
+                            {
+                                $('#gambar3').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged img-fluid"></a>');
+                            }
+                            else if(kategori == 2)
+                            {
+                                $('#gambar3').html('<video controls autoplay><source src="'+src+'"></video>');
+                            }
+                        }
                     }else if(html.segmen == 2)
                     {
-                        $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged w36">');
-                    }else if(html.segmen == 3)
-                    {
-                        $('#gambar').html('<img src="'+html.source+'" alt="image" class="imaged img-fluid">');
+                        if(html.source)
+                        {
+                            const [kategori, src] = html.source.split('_');
+                            if(kategori == 1)
+                            {
+                                $('#gambar1').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged w36"></a>');
+                            }
+                            else if(kategori == 2)
+                            {
+                                $('#gambar1').html('<video controls autoplay><source src="'+src+'"></video>');
+                            }
+                        }
+                        if(html.source2)
+                        {
+                            const [kategori, src] = html.source2.split('_');
+                            if(kategori == 1)
+                            {
+                                $('#gambar2').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged w36"></a>');
+                            }
+                            else if(kategori == 2)
+                            {
+                                $('#gambar2').html('<video controls autoplay><source src="'+src+'"></video>');
+                            }
+                        }
+                        if(html.source3)
+                        {
+                            const [kategori, src] = html.source3.split('_');
+                            if(kategori == 1)
+                            {
+                                $('#gambar3').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged w36"></a>');
+                            }
+                            else if(kategori == 2)
+                            {
+                                $('#gambar3').html('<video controls autoplay><source src="'+src+'"></video>');
+                            }
+                        }
                     }
                     $('#penjelasan').html(html.penjelasan);
                     $('#ModalBasic').modal('show');
