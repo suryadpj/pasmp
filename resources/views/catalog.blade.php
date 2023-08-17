@@ -55,7 +55,7 @@
 
         <!-- Transactions -->
         <div class="section mt-2">
-            <div class="section-title">Our Product</div>
+            <div class="section-title"><h2 class="title">Produk Bengkel</h2></div>
             <div class="transactions">
                 @foreach ($ourproduct as $a)
                     <!-- item -->
@@ -76,7 +76,7 @@
 
         <!-- Transactions -->
         <div class="section mt-2">
-            <div class="section-title">Service Berkala</div>
+            <div class="section-title"><h2 class="title">Service Berkala</h2></div>
             <div class="transactions">
                 @foreach ($serviceberkala as $b)
                     <!-- item -->
@@ -94,11 +94,60 @@
             </div>
         </div>
         <!-- News -->
+
+
+        <!-- Transactions -->
+        <div class="section mt-2">
+            <div class="section-title"><h2 class="title">Produk Body & Paint</h2></div>
+            <div class="transactions">
+                @foreach ($bp as $a)
+                    <!-- item -->
+                    <a href="#" class="show item" id="4_{{ $a->id }}">
+                        <div class="detail">
+                            <img src="{{ $a->gambardepan }}" alt="img" class="image-block imaged w48">
+                            <div>
+                                <strong>{{ $a->judul }}</strong>
+                                <p>{{ $a->ringkasan }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- * item -->
+                @endforeach
+            </div>
+        </div>
+        <!-- * Transactions -->
+
+        <div class="section full mt-4 mb-3">
+            <div class="section-heading padding">
+                <h2 class="title">Toyota Customization Option</h2>
+            </div>
+            <!-- carousel multiple -->
+            <div class="carousel-multiple splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach ($tco as $c)
+                        <li class="splide__slide">
+                            <a href="#" class="show" id="5_{{ $c->id }}">
+                                <div class="blog-card">
+                                    <img src="{{ $c->gambardepan }}" alt="image" class="imaged w-100">
+                                    <div class="text">
+                                        <h4 class="title">{{ $c->judul }}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <!-- * carousel multiple -->
+        </div>
+        <!-- * News -->
+
         <div class="section full mt-4 mb-3">
             <div class="section-heading padding">
                 <h2 class="title">Pekerjaan lain</h2>
             </div>
-
             <!-- carousel multiple -->
             <div class="carousel-multiple splide">
                 <div class="splide__track">
@@ -119,7 +168,6 @@
                 </div>
             </div>
             <!-- * carousel multiple -->
-
         </div>
         <!-- * News -->
 
@@ -177,7 +225,7 @@
                 {
                     $('#judul').html(html.judul);
                     $('.gambar').html('');
-                    if(html.segmen == 1 || 3)
+                    if(html.segmen == 1 || 3 || 4 || 5)
                     {
                         if(html.source)
                         {

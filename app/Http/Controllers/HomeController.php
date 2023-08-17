@@ -34,7 +34,9 @@ class HomeController extends Controller
         $ourproduct = DB::table('catalog')->where('segmen',1)->where('deleted',0)->get();
         $serviceberkala = DB::table('catalog')->where('segmen',2)->where('deleted',0)->get();
         $pekerjaanlain = DB::table('catalog')->where('segmen',3)->where('deleted',0)->get();
-        return view('catalog',['ourproduct' => $ourproduct, 'serviceberkala' => $serviceberkala, 'pekerjaanlain' => $pekerjaanlain]);
+        $bp = DB::table('catalog')->where('segmen',4)->where('deleted',0)->get();
+        $tco = DB::table('catalog')->where('segmen',5)->where('deleted',0)->get();
+        return view('catalog',['ourproduct' => $ourproduct,'bp' => $bp,'tco' => $tco, 'serviceberkala' => $serviceberkala, 'pekerjaanlain' => $pekerjaanlain]);
     }
     public function showcatalog($segmen,$iddata)
     {
