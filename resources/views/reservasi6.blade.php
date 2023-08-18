@@ -165,12 +165,13 @@
             });
 
             $.ajax({
-                url:"../../../../../sumparmat/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
+                url:"../../../../../../sumparmat/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                 async: false,
                 dataType:"json",
                 success:function(html)
                 {
                     totalmaterial = html.hargasum;
+                    console.log('total'+totalmaterial)
                 }
             });
 
