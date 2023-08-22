@@ -91,7 +91,7 @@
         <div class="carousel-button-footer">
             <div class="row">
                 <div class="col-6">
-                    <a href="../" class="btn btn-secondary btn-outline-secondary btn-lg btn-block">Kembali</a>
+                    <a href="../../" class="btn btn-secondary btn-outline-secondary btn-lg btn-block">Kembali</a>
                 </div>
                 <div class="col-6">
                     <a href="#" class="reservasi btn btn-success btn-lg btn-block" id="submit">Next</a>
