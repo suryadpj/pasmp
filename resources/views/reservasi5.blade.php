@@ -12,9 +12,9 @@
     <title>Personal Asisstant Apps</title>
     <meta name="description" content="Finapp HTML Mobile Template">
     <meta name="keywords" content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
-    <link rel="icon" type="image/png" href="../../../../../assets/img/logo_tunas.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../assets/img/logo_tunas.png">
-    <link rel="stylesheet" href="../../../../../assets/css/style2.css">
+    <link rel="icon" type="image/png" href="../../../../../../assets/img/logo_tunas.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../../assets/img/logo_tunas.png">
+    <link rel="stylesheet" href="../../../../../../assets/css/style2.css">
     <link rel="manifest" href="__manifest.json">
 </head>
 
@@ -22,7 +22,7 @@
 
     <!-- loader -->
     <div id="loader">
-        <img src="../../../../../assets/img/logo_tunas.png" alt="icon" class="loading-icon">
+        <img src="../../../../../../assets/img/logo_tunas.png" alt="icon" class="loading-icon">
     </div>
     <!-- * loader -->
 
@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Kendaraan</th>
-                                <td>{{ $kendaraan }}/{{ number_format($kilometer,0) }} km/@if($transmisi == 2) MT @elseif($transmisi == 1) AT @else - @endif</td>
+                                <td>{{ $kendaraan }}/{{ number_format($kilometer,0) }} km/@if($transmisi == 2) MT @elseif($transmisi == 1) AT @else - @endif / @if($kat == 1) T-Care @elseif($kat == 2) Non T-Care @else - @endif</td>
                             </tr>
                         </tbody>
                     </table>
@@ -157,7 +157,7 @@
         <div class="notification-dialog android-style bg-secondary">
             <div class="notification-header">
                 <div class="in">
-                    <img src="../../../../../assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
+                    <img src="../../../../../../assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
                     <strong>Pemberitahuan</strong>
                     <span>now</span>
                 </div>
@@ -176,17 +176,22 @@
     </div>
     <!-- * android style 6 -->
 
-
+    @php
+        if($kat == 1 && $kilometer <= 60000)
+        {
+            $jasa->jasa = 0;
+        }
+    @endphp
     <!-- ========= JS Files =========  -->
     <!-- Bootstrap -->
-    <script src="../../../../../assets/js/lib/bootstrap.bundle.min.js"></script>
-    <script src="../../../../../assets/js/jquery.min.js"></script>
+    <script src="../../../../../../assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../../assets/js/jquery.min.js"></script>
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- Splide -->
-    <script src="../../../../../assets/js/plugins/splide/splide.min.js"></script>
+    <script src="../../../../../../assets/js/plugins/splide/splide.min.js"></script>
     <!-- Base Js File -->
-    <script src="../../../../../assets/js/base.js"></script>
+    <script src="../../../../../../assets/js/base.js"></script>
     <script>
         $('select').on('change', function() {
             var z = this.value;
@@ -197,7 +202,7 @@
             if(km > 5000 )
             {
                 $.ajax({
-                    url:"../../../../../showpaket/"+kendaraan+"/"+paket,
+                    url:"../../../../../../showpaket/"+kendaraan+"/"+paket,
                     dataType:"json",
                     success:function(html)
                     {
@@ -207,7 +212,7 @@
                     }
                 });
                 $.ajax({
-                    url:"../../../../../sumpaket/"+kendaraan+"/"+paket+"/"+{{ $jasa->jasa }},
+                    url:"../../../../../../sumpaket/"+kendaraan+"/"+paket+"/"+{{ $jasa->jasa }},
                     dataType:"json",
                     async: false,
                     success:function(html)
@@ -218,7 +223,7 @@
                 });
 
                 $.ajax({
-                    url:"../../../../../showmaterial/"+kendaraan+"/"+paket,
+                    url:"../../../../../../showmaterial/"+kendaraan+"/"+paket,
                     dataType:"json",
                     success:function(html)
                     {
@@ -228,7 +233,7 @@
                 });
 
                 $.ajax({
-                    url:"../../../../../showpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
+                    url:"../../../../../../showpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                     dataType:"json",
                     success:function(html)
                     {
@@ -238,7 +243,7 @@
                 });
 
                 $.ajax({
-                    url:"../../../../../sumparmat/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
+                    url:"../../../../../../sumparmat/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                     async: false,
                     dataType:"json",
                     success:function(html)
@@ -259,7 +264,7 @@
                     totaljasa = {{ $jasa->jasa }};
                     $('#totaljasa').html(totaljasa.toLocaleString());
                     $.ajax({
-                        url:"../../../../../showpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
+                        url:"../../../../../../showpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                         dataType:"json",
                         success:function(html)
                         {
@@ -269,7 +274,7 @@
                     });
 
                     $.ajax({
-                        url:"../../../../../sumpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
+                        url:"../../../../../../sumpart/"+kendaraan+"/"+paket+"/"+km+"/"+transmisi,
                         async: false,
                         dataType:"json",
                         success:function(html)
@@ -292,7 +297,7 @@
             }
             else
             {
-                window.location.href = "{{ $transmisi }}/" + paket;
+                window.location.href = "{{ $kat }}/" + paket;
             }
         });
     </script>

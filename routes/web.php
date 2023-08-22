@@ -37,8 +37,9 @@ Route::get('/reservasi/{nama}/{nomorplat}', [ReservasiController::class, 'reserv
 Route::get('/reservasifindcar/{nama}/{nomorplat}', [ReservasiController::class, 'reservasi3'])->name('reservasi3');
 Route::get('/reservasifindcar/{nama}/{nomorplat}/{kendaraancari}', [ReservasiController::class, 'reservasi3ext'])->name('reservasi3ext');
 Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}', [ReservasiController::class, 'reservasi4'])->name('reservasi4');
-Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}', [ReservasiController::class, 'reservasi5'])->name('reservasi5');
-Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}/{paket}', [ReservasiController::class, 'reservasi6'])->name('reservasi6');
+Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}/{kat}', [ReservasiController::class, 'reservasi5'])->name('reservasi5');
+// Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}', [ReservasiController::class, 'reservasi5'])->name('reservasi5');
+Route::get('/reservasi/{nama}/{nomorplat}/{kendaraan}/{kilometer}/{transmisi}/{kat}/{paket}', [ReservasiController::class, 'reservasi6'])->name('reservasi6');
 Route::get('/showpaket/{kendaraan}/{paket}', [ReservasiController::class, 'showpaket'])->name('showpaket');
 Route::get('/sumpaket/{kendaraan}/{paket}/{jasa}', [ReservasiController::class, 'sumpaket'])->name('sumpaket');
 Route::get('/showmaterial/{kendaraan}/{paket}', [ReservasiController::class, 'showmaterial'])->name('showmaterial');

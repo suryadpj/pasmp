@@ -38,17 +38,17 @@ class ReservasiController extends Controller
     {
         return view('reservasi4',['nama' => $nama, 'nomorplat' => $nomorplat, 'kendaraan' => $kendaraan]);
     }
-    public function reservasi5($nama, $nomorplat, $kendaraan, $kilometer, $transmisi)
+    public function reservasi5($nama, $nomorplat, $kendaraan, $kilometer, $transmisi, $kat)
     {
         $jasa = DB::table('jasa')->leftjoin('kendaraan','kendaraan.id','jasa.IDKendaraan')->where('nama',$kendaraan)->where('km',$kilometer)->first();
         // $opl = DB::table('opl')->leftjoin('kendaraan','kendaraan.id','opl.IDKendaraan')->where('nama',$kendaraan)->where('km',$kilometer)->get();
-        return view('reservasi5',['nama' => $nama, 'nomorplat' => $nomorplat, 'kendaraan' => $kendaraan, 'kilometer' => $kilometer, 'transmisi' => $transmisi, 'jasa' => $jasa]);
+        return view('reservasi5',['nama' => $nama, 'nomorplat' => $nomorplat, 'kendaraan' => $kendaraan, 'kilometer' => $kilometer, 'transmisi' => $transmisi, 'kat' => $kat, 'jasa' => $jasa]);
     }
-    public function reservasi6($nama, $nomorplat, $kendaraan, $kilometer, $transmisi, $paket)
+    public function reservasi6($nama, $nomorplat, $kendaraan, $kilometer, $transmisi, $kat, $paket)
     {
         $jasa = DB::table('jasa')->leftjoin('kendaraan','kendaraan.id','jasa.IDKendaraan')->where('nama',$kendaraan)->where('km',$kilometer)->first();
         // $opl = DB::table('opl')->leftjoin('kendaraan','kendaraan.id','opl.IDKendaraan')->where('nama',$kendaraan)->where('km',$kilometer)->get();
-        return view('reservasi6',['nama' => $nama, 'nomorplat' => $nomorplat, 'kendaraan' => $kendaraan, 'kilometer' => $kilometer, 'transmisi' => $transmisi, 'jasa' => $jasa, 'paket' => $paket]);
+        return view('reservasi6',['nama' => $nama, 'nomorplat' => $nomorplat, 'kendaraan' => $kendaraan, 'kilometer' => $kilometer, 'transmisi' => $transmisi, 'kat' => $kat, 'jasa' => $jasa, 'paket' => $paket]);
     }
     public function showpaket($kendaraan,$paket)
     {

@@ -113,6 +113,17 @@
                         </div>
                     </div>
 
+                    <div class="form-group basic">
+                        <div class="input-wrapper">
+                            <label class="label" for="transmisi">Kategori</label>
+                            <select class="form-control custom-select" id="kategori">
+                                <option value="-">-</option>
+                                <option value="1">T-Care</option>
+                                <option value="2">Non T-Care</option>
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="carousel-button-footer">
@@ -147,7 +158,7 @@
             <div class="notification-content">
                 <div class="in">
                     <div class="text">
-                        Kilometer belum diisi
+                        Kilometer / kategori belum diisi
                     </div>
                 </div>
             </div>
@@ -170,13 +181,21 @@
         $(document).on('click', '.reservasi', function(){
             var x = document.getElementById('kilometer').value;
             var y = document.getElementById('transmisi').value;
+            var z = document.getElementById('kategori').value;
             if(x == 0)
             {
                 notification('notification-6', 3000)
             }
             else
             {
-                window.location.href = "{{ $kendaraan }}/" + x + "/" + y;
+                if(z == "-")
+                {
+                    notification('notification-6', 3000)
+                }
+                else
+                {
+                    window.location.href = "{{ $kendaraan }}/" + x + "/" + y + "/" + z;
+                }
             }
         });
     </script>
