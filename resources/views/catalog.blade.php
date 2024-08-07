@@ -67,7 +67,7 @@
                             <li class="splide__slide">
                                 <a href="#" class="show" id="1_{{ $a->id }}">
                                     <div class="blog-card">
-                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $a->gambardepan }}" alt="image" class="imaged img-thumbnail">
+                                        <img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/gambardepan/{{ $a->gambardepan }}" alt="image" class="imaged img-thumbnail">
                                         <div class="text">
                                             <h4 class="title">{{ $a->judul }}</h4>
                                             <p>{{ $a->ringkasan }}</p>
@@ -96,7 +96,7 @@
                             <li class="splide__slide">
                                 <a href="#" class="show" id="2_{{ $b->id }}">
                                     <div class="blog-card">
-                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $b->gambardepan }}" alt="image" class="imaged img-thumbnail">
+                                        <img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/gambardepan/{{ $b->gambardepan }}" alt="image" class="imaged img-thumbnail">
                                         <div class="text">
                                             <h4 class="title">{{ $b->judul }}</h4>
                                             <p>{{ $b->ringkasan }}</p>
@@ -125,7 +125,7 @@
                             <li class="splide__slide">
                                 <a href="#" class="show" id="4_{{ $a->id }}">
                                     <div class="blog-card">
-                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $a->gambardepan }}" alt="image" class="imaged img-thumbnail">
+                                        <img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/gambardepan/{{ $a->gambardepan }}" alt="image" class="imaged img-thumbnail">
                                         <div class="text">
                                             <h4 class="title">{{ $a->judul }}</h4>
                                             <p>{{ $a->ringkasan }}</p>
@@ -152,7 +152,7 @@
                             <li class="splide__slide">
                                 <a href="#" class="show" id="5_{{ $c->id }}">
                                     <div class="blog-card">
-                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $c->gambardepan }}" alt="image" class="imaged w-100">
+                                        <img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/gambardepan/{{ $c->gambardepan }}" alt="image" class="imaged w-100">
                                         <div class="text">
                                             <h4 class="title">{{ $c->judul }}</h4>
                                         </div>
@@ -179,7 +179,7 @@
                             <li class="splide__slide">
                                 <a href="#" class="show" id="3_{{ $c->id }}">
                                     <div class="blog-card">
-                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $c->gambardepan }}" alt="image" class="imaged w-100">
+                                        <img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/gambardepan/{{ $c->gambardepan }}" alt="image" class="imaged w-100">
                                         <div class="text">
                                             <h4 class="title">{{ $c->judul }}</h4>
                                         </div>
@@ -252,30 +252,30 @@
                             const [kategori, src] = html.source.split('_');
                             console.log(kategori)
                             if (kategori == 1) {
-                                $('#gambar1').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                $('#gambar1').html('<a href="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src + '" target="_blank"><img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' +
                                     src + '" alt="image" class="imaged img-fluid"></a>');
                             } else if (kategori == 2) {
-                                $('#gambar1').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                $('#gambar1').html('<video controls autoplay><source src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src +
                                     '"></video>');
                             }
                         }
                         if (html.source2) {
                             const [kategori, src] = html.source2.split('_');
                             if (kategori == 1) {
-                                $('#gambar2').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                $('#gambar2').html('<a href="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src + '" target="_blank"><img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' +
                                     src + '" alt="image" class="imaged img-fluid"></a>');
                             } else if (kategori == 2) {
-                                $('#gambar2').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                $('#gambar2').html('<video controls autoplay><source src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src +
                                     '"></video>');
                             }
                         }
                         if (html.source3) {
                             const [kategori, src] = html.source3.split('_');
                             if (kategori == 1) {
-                                $('#gambar3').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                $('#gambar3').html('<a href="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src + '" target="_blank"><img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' +
                                     src + '" alt="image" class="imaged img-fluid"></a>');
                             } else if (kategori == 2) {
-                                $('#gambar3').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                $('#gambar3').html('<video controls autoplay><source src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src +
                                     '"></video>');
                             }
                         }
@@ -283,10 +283,10 @@
                         if (html.source) {
                             const [kategori, src] = html.source.split('_');
                             if (kategori == 1) {
-                                $('#gambar1').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                $('#gambar1').html('<a href="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src + '" target="_blank"><img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' +
                                     src + '" alt="image" class="imaged w36"></a>');
                             } else if (kategori == 2) {
-                                $('#gambar1').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                $('#gambar1').html('<video controls autoplay><source src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src +
                                     '"></video>');
                             }
                         }
@@ -296,17 +296,17 @@
                                 $('#gambar2').html('<a href="' + src + '" target="_blank"><img src="' +
                                     src + '" alt="image" class="imaged w36"></a>');
                             } else if (kategori == 2) {
-                                $('#gambar2').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                $('#gambar2').html('<video controls autoplay><source src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src +
                                     '"></video>');
                             }
                         }
                         if (html.source3) {
                             const [kategori, src] = html.source3.split('_');
                             if (kategori == 1) {
-                                $('#gambar3').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                $('#gambar3').html('<a href="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src + '" target="_blank"><img src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' +
                                     src + '" alt="image" class="imaged w36"></a>');
                             } else if (kategori == 2) {
-                                $('#gambar3').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                $('#gambar3').html('<video controls autoplay><source src="https://backend1.tunastoyotamampang.com/public/storage/katalog/konten/' + src +
                                     '"></video>');
                             }
                         }
