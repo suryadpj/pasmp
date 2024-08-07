@@ -10,16 +10,17 @@
     <meta name="theme-color" content="#000000">
     <title>Personal Asisstant Apps</title>
     <meta name="description" content="Finapp HTML Mobile Template">
-    <meta name="keywords" content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <meta name="keywords"
+        content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
     <link rel="icon" type="image/png" href="assets/img/logo_tunas.png" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo_tunas.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="__manifest.json">
     <style>
-            video {
-    width: 100%;
-    height: auto;
-    }
+        video {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -54,65 +55,87 @@
     <div id="appCapsule">
 
         <!-- Transactions -->
-        <div class="section mt-2">
-            <div class="section-title"><h2 class="title">Produk Bengkel</h2></div>
-            <div class="transactions">
-                @foreach ($ourproduct as $a)
-                    <!-- item -->
-                    <a href="#" class="show item" id="1_{{ $a->id }}">
-                        <div class="detail">
-                            <img src="{{ $a->gambardepan }}" alt="img" class="image-block imaged w48">
-                            <div>
-                                <strong>{{ $a->judul }}</strong>
-                                <p>{{ $a->ringkasan }}</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- * item -->
-                @endforeach
+        <div class="section full mt-4 mb-3">
+            <div class="section-heading padding">
+                <h2 class="title">Pekerjaan lain</h2>
+            </div>
+            <!-- carousel multiple -->
+            <div class="carousel-multiple splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach ($ourproduct as $a)
+                            <li class="splide__slide">
+                                <a href="#" class="show" id="1_{{ $a->id }}">
+                                    <div class="blog-card">
+                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $a->gambardepan }}" alt="image" class="imaged img-thumbnail">
+                                        <div class="text">
+                                            <h4 class="title">{{ $a->judul }}</h4>
+                                            <p>{{ $a->ringkasan }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
+        <!-- * carousel multiple -->
         <!-- * Transactions -->
 
         <!-- Transactions -->
-        <div class="section mt-2">
-            <div class="section-title"><h2 class="title">Service Berkala</h2></div>
-            <div class="transactions">
-                @foreach ($serviceberkala as $b)
-                    <!-- item -->
-                    <a href="#" class="show item" id="2_{{ $b->id }}">
-                        <div class="detail">
-                            <img src="{{ $b->gambardepan }}" alt="img" class="image-block imaged w48">
-                            <div>
-                                <strong>{{ $b->judul }}</strong>
-                                <p>{{ $b->ringkasan }}</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- * item -->
-                @endforeach
+        <div class="section full mt-4 mb-3">
+            <div class="section-heading padding">
+                <h2 class="title">Service Berkala</h2>
+            </div>
+            <!-- carousel multiple -->
+            <div class="carousel-multiple splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach ($serviceberkala as $b)
+                            <li class="splide__slide">
+                                <a href="#" class="show" id="2_{{ $b->id }}">
+                                    <div class="blog-card">
+                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $b->gambardepan }}" alt="image" class="imaged img-thumbnail">
+                                        <div class="text">
+                                            <h4 class="title">{{ $b->judul }}</h4>
+                                            <p>{{ $b->ringkasan }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- News -->
 
 
         <!-- Transactions -->
-        <div class="section mt-2">
-            <div class="section-title"><h2 class="title">Produk Body & Paint</h2></div>
-            <div class="transactions">
-                @foreach ($bp as $a)
-                    <!-- item -->
-                    <a href="#" class="show item" id="4_{{ $a->id }}">
-                        <div class="detail">
-                            <img src="{{ $a->gambardepan }}" alt="img" class="image-block imaged w48">
-                            <div>
-                                <strong>{{ $a->judul }}</strong>
-                                <p>{{ $a->ringkasan }}</p>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- * item -->
-                @endforeach
+        <div class="section full mt-4 mb-3">
+            <div class="section-heading padding">
+                <h2 class="title">Produk Body & Paint</h2>
+            </div>
+            <!-- carousel multiple -->
+            <div class="carousel-multiple splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach ($bp as $a)
+                            <li class="splide__slide">
+                                <a href="#" class="show" id="4_{{ $a->id }}">
+                                    <div class="blog-card">
+                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $a->gambardepan }}" alt="image" class="imaged img-thumbnail">
+                                        <div class="text">
+                                            <h4 class="title">{{ $a->judul }}</h4>
+                                            <p>{{ $a->ringkasan }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- * Transactions -->
@@ -126,16 +149,16 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         @foreach ($tco as $c)
-                        <li class="splide__slide">
-                            <a href="#" class="show" id="5_{{ $c->id }}">
-                                <div class="blog-card">
-                                    <img src="{{ $c->gambardepan }}" alt="image" class="imaged w-100">
-                                    <div class="text">
-                                        <h4 class="title">{{ $c->judul }}</h4>
+                            <li class="splide__slide">
+                                <a href="#" class="show" id="5_{{ $c->id }}">
+                                    <div class="blog-card">
+                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $c->gambardepan }}" alt="image" class="imaged w-100">
+                                        <div class="text">
+                                            <h4 class="title">{{ $c->judul }}</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -153,16 +176,16 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         @foreach ($pekerjaanlain as $c)
-                        <li class="splide__slide">
-                            <a href="#" class="show" id="3_{{ $c->id }}">
-                                <div class="blog-card">
-                                    <img src="{{ $c->gambardepan }}" alt="image" class="imaged w-100">
-                                    <div class="text">
-                                        <h4 class="title">{{ $c->judul }}</h4>
+                            <li class="splide__slide">
+                                <a href="#" class="show" id="3_{{ $c->id }}">
+                                    <div class="blog-card">
+                                        <img src="../../backendpasmp/public/storage/katalog/gambardepan/{{ $c->gambardepan }}" alt="image" class="imaged w-100">
+                                        <div class="text">
+                                            <h4 class="title">{{ $c->judul }}</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -214,92 +237,77 @@
     <!-- Base Js File -->
     <script src="assets/js/base.js"></script>
     <script>
-        $(document).on('click', '.show', function(){
+        $(document).on('click', '.show', function() {
             var id = $(this).attr('id');
             console.log(id)
             const [segmen, iddata] = id.split('_');
             $.ajax({
-                url:"showcatalog/"+segmen+"/"+iddata,
-                dataType:"json",
-                success:function(html)
-                {
+                url: "showcatalog/" + segmen + "/" + iddata,
+                dataType: "json",
+                success: function(html) {
                     $('#judul').html(html.judul);
                     $('.gambar').html('');
-                    if(html.segmen == 1 || 3 || 4 || 5)
-                    {
-                        if(html.source)
-                        {
+                    if (html.segmen == 1 || 3 || 4 || 5) {
+                        if (html.source) {
                             const [kategori, src] = html.source.split('_');
                             console.log(kategori)
-                            if(kategori == 1)
-                            {
-                                $('#gambar1').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged img-fluid"></a>');
-                            }
-                            else if(kategori == 2)
-                            {
-                                $('#gambar1').html('<video controls autoplay><source src="'+src+'"></video>');
+                            if (kategori == 1) {
+                                $('#gambar1').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                    src + '" alt="image" class="imaged img-fluid"></a>');
+                            } else if (kategori == 2) {
+                                $('#gambar1').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                    '"></video>');
                             }
                         }
-                        if(html.source2)
-                        {
+                        if (html.source2) {
                             const [kategori, src] = html.source2.split('_');
-                            if(kategori == 1)
-                            {
-                                $('#gambar2').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged img-fluid"></a>');
-                            }
-                            else if(kategori == 2)
-                            {
-                                $('#gambar2').html('<video controls autoplay><source src="'+src+'"></video>');
+                            if (kategori == 1) {
+                                $('#gambar2').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                    src + '" alt="image" class="imaged img-fluid"></a>');
+                            } else if (kategori == 2) {
+                                $('#gambar2').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                    '"></video>');
                             }
                         }
-                        if(html.source3)
-                        {
+                        if (html.source3) {
                             const [kategori, src] = html.source3.split('_');
-                            if(kategori == 1)
-                            {
-                                $('#gambar3').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged img-fluid"></a>');
-                            }
-                            else if(kategori == 2)
-                            {
-                                $('#gambar3').html('<video controls autoplay><source src="'+src+'"></video>');
+                            if (kategori == 1) {
+                                $('#gambar3').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                    src + '" alt="image" class="imaged img-fluid"></a>');
+                            } else if (kategori == 2) {
+                                $('#gambar3').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                    '"></video>');
                             }
                         }
-                    }else if(html.segmen == 2)
-                    {
-                        if(html.source)
-                        {
+                    } else if (html.segmen == 2) {
+                        if (html.source) {
                             const [kategori, src] = html.source.split('_');
-                            if(kategori == 1)
-                            {
-                                $('#gambar1').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged w36"></a>');
-                            }
-                            else if(kategori == 2)
-                            {
-                                $('#gambar1').html('<video controls autoplay><source src="'+src+'"></video>');
+                            if (kategori == 1) {
+                                $('#gambar1').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                    src + '" alt="image" class="imaged w36"></a>');
+                            } else if (kategori == 2) {
+                                $('#gambar1').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                    '"></video>');
                             }
                         }
-                        if(html.source2)
-                        {
+                        if (html.source2) {
                             const [kategori, src] = html.source2.split('_');
-                            if(kategori == 1)
-                            {
-                                $('#gambar2').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged w36"></a>');
-                            }
-                            else if(kategori == 2)
-                            {
-                                $('#gambar2').html('<video controls autoplay><source src="'+src+'"></video>');
+                            if (kategori == 1) {
+                                $('#gambar2').html('<a href="' + src + '" target="_blank"><img src="' +
+                                    src + '" alt="image" class="imaged w36"></a>');
+                            } else if (kategori == 2) {
+                                $('#gambar2').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                    '"></video>');
                             }
                         }
-                        if(html.source3)
-                        {
+                        if (html.source3) {
                             const [kategori, src] = html.source3.split('_');
-                            if(kategori == 1)
-                            {
-                                $('#gambar3').html('<a href="'+src+'" target="_blank"><img src="'+src+'" alt="image" class="imaged w36"></a>');
-                            }
-                            else if(kategori == 2)
-                            {
-                                $('#gambar3').html('<video controls autoplay><source src="'+src+'"></video>');
+                            if (kategori == 1) {
+                                $('#gambar3').html('<a href="../../backendpasmp/public/storage/katalog/konten/' + src + '" target="_blank"><img src="../../backendpasmp/public/storage/katalog/konten/' +
+                                    src + '" alt="image" class="imaged w36"></a>');
+                            } else if (kategori == 2) {
+                                $('#gambar3').html('<video controls autoplay><source src="../../backendpasmp/public/storage/katalog/konten/' + src +
+                                    '"></video>');
                             }
                         }
                     }
