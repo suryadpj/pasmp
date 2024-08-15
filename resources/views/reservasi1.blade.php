@@ -44,7 +44,7 @@
         </div>
         <div class="section mb-5 p-2">
             <div class="form-group basic">
-                <input type="text" class="form-control verification-input" id="smscode" placeholder=".....">
+                <input type="text" autofocus class="form-control verification-input" id="smscode" placeholder=".....">
             </div>
             <img src="assets/img/register2.jpg" alt="alt" class="imaged w-100 square mb-4">
             <div class="carousel-button-footer">

@@ -143,6 +143,48 @@
     </div>
     <!-- * App Capsule -->
     <!-- android style 6 -->
+    <div id="notification-4" class="notification-box">
+        <div class="notification-dialog android-style bg-secondary">
+            <div class="notification-header">
+                <div class="in">
+                    <img src="../../../assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
+                    <strong>Pemberitahuan</strong>
+                    <span>now</span>
+                </div>
+                <a href="#" class="close-button">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <div class="notification-content">
+                <div class="in">
+                    <div class="text">
+                        Kilometer belum dipilih
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="notification-5" class="notification-box">
+        <div class="notification-dialog android-style bg-secondary">
+            <div class="notification-header">
+                <div class="in">
+                    <img src="../../../assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
+                    <strong>Pemberitahuan</strong>
+                    <span>now</span>
+                </div>
+                <a href="#" class="close-button">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <div class="notification-content">
+                <div class="in">
+                    <div class="text">
+                        Transmisi belum dipilih
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="notification-6" class="notification-box">
         <div class="notification-dialog android-style bg-secondary">
             <div class="notification-header">
@@ -158,7 +200,7 @@
             <div class="notification-content">
                 <div class="in">
                     <div class="text">
-                        Kilometer / kategori belum diisi
+                        kategori belum dipilih
                     </div>
                 </div>
             </div>
@@ -184,17 +226,24 @@
             var z = document.getElementById('kategori').value;
             if(x == 0)
             {
-                notification('notification-6', 3000)
+                notification('notification-4', 3000)
             }
             else
             {
-                if(z == "-")
+                if(y == 0)
                 {
-                    notification('notification-6', 3000)
+                    notification('notification-5', 3000)
                 }
                 else
                 {
-                    window.location.href = "{{ $kendaraan }}/" + x + "/" + y + "/" + z;
+                    if(z == "-")
+                    {
+                        notification('notification-6', 3000)
+                    }
+                    else
+                    {
+                        window.location.href = "{{ $kendaraan }}/" + x + "/" + y + "/" + z;
+                    }
                 }
             }
         });

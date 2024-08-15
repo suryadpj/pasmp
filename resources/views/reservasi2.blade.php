@@ -46,7 +46,7 @@
             <form role="form" id="formdt" method='post' enctype="multipart/form-data">
             {{ csrf_field() }}
                 <div class="form-group basic">
-                    <input type="text" class="form-control verification-input" id="smscode" placeholder="•••••••"
+                    <input type="text" autofocus class="form-control verification-input" id="smscode" placeholder="•••••••"
                         maxlength="8">
                 </div>
                 <img src="../assets/img/register2.jpg" alt="alt" class="imaged w-100 square mb-4">
