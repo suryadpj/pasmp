@@ -197,7 +197,7 @@ class ReservasiController extends Controller
                     'part' => $part[$iii],
                     'qty' => $partqty[$iii],
                     'harga' => $harga3[$iii],
-                    'total' => $partqty[$iii] * $harga2[$iii],
+                    'total' => $partqty[$iii] * $harga3[$iii],
                     'created_by' => 999,
                 );
 
