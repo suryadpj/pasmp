@@ -30,6 +30,14 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/catalog', [HomeController::class, 'catalog'])->name('catalog');
+Route::get('/tradein', [HomeController::class, 'tradein'])->name('tradein');
+Route::post('/tradeinsimpan', [HomeController::class, 'store'])->name('tradein');
+Route::get('tradein/merk/list', [HomeController::class, 'merk'])->name('tradein.merk');
+Route::get('tradein/merk/{id}/models', [HomeController::class, 'model'])->name('tradein.model');
+Route::get('tradein/merk/{id}/models/{id2}/years', [HomeController::class, 'year'])->name('tradein.year');
+Route::get('tradein/merk/{id}/models/{id2}/years/{id3}/variants', [HomeController::class, 'variants'])->name('tradein.variants');
+Route::get('tradein/merk/{id}/models/{id2}/years/{id3}/variants/{id4}/transmisi', [HomeController::class, 'transmisi'])->name('tradein.transmisi');
+Route::get('tradein/final/{id}', [HomeController::class, 'tradeinfinal'])->name('tradein.final');
 // Route::resource('reservasi', ReservasiController::class);
 Route::get('/reservasi', [ReservasiController::class, 'reservasi1'])->name('reservasi1');
 Route::get('/reservasi/{nama}', [ReservasiController::class, 'reservasi2'])->name('reservasi2');

@@ -63,11 +63,14 @@
 
         <div class="carousel-button-footer">
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <a href="catalog" class="btn btn-danger btn-outline-secondary btn-lg btn-block">Katalog</a>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <a href="reservasi" class="btn btn-success btn-lg btn-block">Reservasi</a>
+                </div>
+                <div class="col-4">
+                    <a href="tradein" class="btn btn-primary btn-lg btn-block">Trade In</a>
                 </div>
             </div>
         </div>
